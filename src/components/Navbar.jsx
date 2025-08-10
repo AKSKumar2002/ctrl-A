@@ -134,34 +134,35 @@ export const Navbar = () => {
         </div>
 
         {/* Mobile Glassy Sidebar */}
-        <div
-          className={cn(
-            "fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white/10 dark:bg-black/30 backdrop-blur-xl border-l border-white/20 z-40",
-            "transition-transform duration-500 ease-in-out md:hidden rounded-l-2xl shadow-2xl",
-            isMenuOpen ? "translate-x-0" : "translate-x-full"
-          )}
-        >
-          <button
-            className="absolute top-4 right-4 text-white"
-            onClick={() => setIsMenuOpen(false)}
+        {isMenuOpen && ( // Render only when menu is open
+          <div
+            className={cn(
+              "fixed top-0 right-0 h-full w-3/4 sm:w-1/2 bg-white/10 dark:bg-black/30 backdrop-blur-xl border-l border-white/20 z-40",
+              "transition-transform duration-500 ease-in-out md:hidden rounded-l-2xl shadow-2xl"
+            )}
           >
-            <X size={24} /> {/* Adjusted icon size */}
-          </button>
+            <button
+              className="absolute top-4 right-4 text-white"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <X size={24} /> {/* Adjusted icon size */}
+            </button>
 
-          <div className="flex flex-col items-start gap-4 px-6 pt-20 text-white"> {/* Reduced padding */}
-            {navItems.map(({ name, href, icon: Icon }, key) => (
-              <a
-                key={key}
-                href={href}
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-2 text-sm font-medium hover:text-gray-300 transition-all" // Reduced font size
-              >
-                <Icon className="w-4 h-4" />
-                {name}
-              </a>
-            ))}
+            <div className="flex flex-col items-start gap-4 px-6 pt-20 text-white"> {/* Reduced padding */}
+              {navItems.map(({ name, href, icon: Icon }, key) => (
+                <a
+                  key={key}
+                  href={href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-2 text-sm font-medium hover:text-gray-300 transition-all" // Reduced font size
+                >
+                  <Icon className="w-4 h-4" />
+                  {name}
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </nav>
     </>
   );
