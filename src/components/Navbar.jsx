@@ -104,7 +104,7 @@ export const Navbar = () => {
             className="text-xl font-bold text-primary flex items-center ml-2 mr-4" // Reduced font size and spacing
           >
             <span className="shining-text text-2xl">ctrl</span>
-            <span className="ml-1 text-purple text-base">.A</span>
+            <span className="ml-1 text-purple text-base">A</span>
           </a>
 
           {/* Desktop Nav */}
