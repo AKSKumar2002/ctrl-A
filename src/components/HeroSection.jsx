@@ -10,10 +10,10 @@ export const HeroSection = () => {
         <div className="space-y-6">
           <h1 className="text-3xl md:text-6xl font-bold tracking-tight"> {/* Reduced font size for mobile */}
             <span className="opacity-0 animate-fade-in"> Hi, we are</span>
-            <span className="text-white opacity-0 animate-fade-in-delay-1">
+            <span className="opacity-0 animate-fade-in-delay-1 text-black dark:text-white">
               {" "}
-              ctrl
             </span>
+            ctrl
             <span className="text-primary ml-2 animate-fade-in-delay-2 flip-animation">
               {" "}
               A
