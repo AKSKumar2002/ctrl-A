@@ -3,31 +3,30 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "Fiberflow Networks",
+    description: "A sleek and high-speed internet service website built with React and Tailwind, crafted for Fiberflow.",
     image: "/projects/project1.png",
     tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
+    demoUrl: "https://fiberflow.co.in/",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
-    description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
+    title: "Farmpick Ecommerce",
+    description: "A modern and responsive e-commerce website built with React and Tailwind, designed for seamless shopping experiences.",
+    image: "/projects/project2.jpg",
     tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
+    demoUrl: "https://farmpickshope.vercel.app/",
     githubUrl: "#",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
+    title: "Ride Infinity",
     description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
+      "A dynamic and user-friendly bike rental platform built with React and Tailwind, crafted for Ride Infinity.",
+    image: "/projects/project3.jpg",
     tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
+    demoUrl: "https://ride-infinity.vercel.app/",
     githubUrl: "#",
   },
 ];
