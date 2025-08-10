@@ -4,7 +4,6 @@ import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
 import AboutUs from "./components/AboutUs";
 
-
 function App() {
   return (
     <>
