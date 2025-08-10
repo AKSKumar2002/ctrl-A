@@ -10,14 +10,15 @@ export const HeroSection = () => {
         <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in"> Hi, we are</span>
-            <span className="text-primary opacity-0 animate-fade-in-delay-1">
+            <span className="text-white opacity-0 animate-fade-in-delay-1">
               {" "}
               ctrl
             </span>
-            <span className="text-gradient ml-2 animate-fade-in-delay-2 flip-animation">
+            <span className="text-primary ml-2 animate-fade-in-delay-2 flip-animation">
               {" "}
               A
             </span>
+            .labs
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
