@@ -14,7 +14,7 @@ export const HeroSection = () => {
               {" "}
               ctrl
             </span>
-            <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2">
+            <span className="text-gradient ml-2 animate-fade-in-delay-2 flip-animation">
               {" "}
               A
             </span>
@@ -40,3 +40,17 @@ export const HeroSection = () => {
     </section>
   );
 };
+
+// Add the following CSS to your global styles or a relevant CSS file:
+/* .flip-animation {
+  display: inline-block;
+  animation: flip 2s infinite;
+}
+@keyframes flip {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+} */
