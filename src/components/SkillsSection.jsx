@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 const skills = [
@@ -28,6 +28,42 @@ const categories = ["all", "frontend", "backend", "tools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [animatedLevels, setAnimatedLevels] = useState({});
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const animationTimeouts = skills.map((skill, index) => {
+            return setTimeout(() => {
+              setAnimatedLevels((prev) => ({
+                ...prev,
+                [skill.name]: skill.level,
+              }));
+            }, index * 100); // Stagger animation for each skill
+          });
+
+          return () => {
+            animationTimeouts.forEach(clearTimeout);
+          };
+        } else {
+          setAnimatedLevels({}); // Reset levels when out of view
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [activeCategory]);
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
@@ -38,7 +74,11 @@ export const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-24 px-4 relative bg-secondary/30">
+    <section
+      id="skills"
+      ref={sectionRef}
+      className="py-24 px-4 relative bg-secondary/30"
+    >
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
           What we <span className="text-primary">Implement</span>
@@ -75,7 +115,7 @@ export const SkillsSection = () => {
                 <div
                   className="h-3 rounded-full transition-all duration-700 ease-out"
                   style={{
-                    width: `${skill.level}%`,
+                    width: `${animatedLevels[skill.name] || 0}%`,
                     background: getSkillBarGradient(skill.level),
                   }}
                 />
