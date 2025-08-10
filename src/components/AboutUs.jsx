@@ -14,7 +14,7 @@ const teamMembers = [
     bio: "Passionate about building scalable web apps and sleek UI experiences.",
   },
   {
-    name: "John Doe",
+    name: "Arun Krishna",
     role: "UI/UX Designer",
     img: "/images/Arun.jpg",
     bio: "Designs intuitive and beautiful interfaces with focus on usability.",
@@ -53,7 +53,7 @@ const AboutUs = () => {
           <h1 className="text-4xl font-bold mb-6">Our Team</h1>
           <p className="text-white/80 text-lg mb-8">
             We are a passionate team at{" "}
-            <span className="text-purple-400 font-semibold">AKStack.dev</span>{" "}
+            <span className="text-purple-400 font-semibold">ctrlA.labs</span>{" "}
             crafting cutting-edge web experiences. From sleek interfaces to
             robust backends, we bring ideas to life.
           </p>
