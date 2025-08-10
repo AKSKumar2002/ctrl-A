@@ -51,7 +51,7 @@ export const SkillsSection = () => {
           setAnimatedLevels({}); // Reset levels when out of view
         }
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.1 } // Lower threshold for better mobile compatibility
     );
 
     if (sectionRef.current) {
