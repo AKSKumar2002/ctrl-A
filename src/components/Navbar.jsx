@@ -92,28 +92,28 @@ export const Navbar = () => {
       <nav
         className={cn(
           "fixed top-4 left-1/2 transform -translate-x-1/2 z-50",
-          "rounded-3xl shadow-xl transition-all duration-300 px-6 py-3 backdrop-blur-md",
+          "rounded-3xl shadow-xl transition-all duration-300 px-4 py-2 backdrop-blur-md", // Reduced padding for mobile
           "border border-white/20 bg-white/10 dark:bg-black/20",
           isScrolled ? "scale-100" : "scale-100"
         )}
       >
         <div className="flex items-center justify-between gap-4 max-w-screen-xl mx-auto">
-          {/* Logo - Bigger and spaced left */}
+          {/* Logo - Adjusted for mobile */}
           <a
             href="#hero"
-            className="text-2xl font-bold text-primary flex items-center ml-2 mr-8"
+            className="text-xl font-bold text-primary flex items-center ml-2 mr-4" // Reduced font size and spacing
           >
-            <span className="shining-text text-3xl">ctrl</span>
-            <span className="ml-1 text-purple text-lg">.A</span>
+            <span className="shining-text text-2xl">ctrl</span>
+            <span className="ml-1 text-purple text-base">.A</span>
           </a>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex gap-6"> {/* Reduced gap */}
             {navItems.map(({ name, href, icon: Icon }, key) => (
               <a
                 key={key}
                 href={href}
-                className="text-sm font-semibold text-white/80 hover:text-white underline-hover transform transition duration-300 hover:scale-125 hover:-translate-y-1 hover:drop-shadow-lg flex items-center gap-2"
+                className="text-xs font-semibold text-white/80 hover:text-white underline-hover transform transition duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-lg flex items-center gap-2" // Reduced font size
                 style={{ perspective: "500px" }}
               >
                 <Icon className="w-4 h-4" />
@@ -129,7 +129,7 @@ export const Navbar = () => {
             className="md:hidden text-white p-2"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? <X size={20} /> : <Menu size={20} />} {/* Reduced icon size */}
           </button>
         </div>
 
@@ -145,18 +145,18 @@ export const Navbar = () => {
             className="absolute top-4 right-4 text-white"
             onClick={() => setIsMenuOpen(false)}
           >
-            <X size={28} />
+            <X size={24} /> {/* Adjusted icon size */}
           </button>
 
-          <div className="flex flex-col items-start gap-6 px-8 pt-24 text-white">
+          <div className="flex flex-col items-start gap-4 px-6 pt-20 text-white"> {/* Reduced padding */}
             {navItems.map(({ name, href, icon: Icon }, key) => (
               <a
                 key={key}
                 href={href}
                 onClick={() => setIsMenuOpen(false)}
-                className="flex items-center gap-3 text-lg font-medium hover:text-gray-300 transition-all"
+                className="flex items-center gap-2 text-sm font-medium hover:text-gray-300 transition-all" // Reduced font size
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4" />
                 {name}
               </a>
             ))}

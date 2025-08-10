@@ -8,7 +8,7 @@ export const HeroSection = () => {
     >
       <div className="container max-w-4xl mx-auto text-center z-10">
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-3xl md:text-6xl font-bold tracking-tight"> {/* Reduced font size for mobile */}
             <span className="opacity-0 animate-fade-in"> Hi, we are</span>
             <span className="text-white opacity-0 animate-fade-in-delay-1">
               {" "}
@@ -21,7 +21,7 @@ export const HeroSection = () => {
             .labs
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          <p className="text-base md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3"> {/* Reduced font size */}
           We create seamless and stunning web interfaces that blend design with functionality. 
           At AKStack.dev, we specialize in modern front-end technologies to deliver immersive user experiences, backed by robust backend solutions that scale with your business.
           </p>

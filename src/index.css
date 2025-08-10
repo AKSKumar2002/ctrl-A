@@ -182,3 +182,18 @@
   overflow: hidden;
   border-right: 2px solid #c084fc; /* purple-400 */
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.875rem; /* Adjusted for mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Adjusted for mobile */
+  }
+
+  .cosmic-button {
+    padding: 0.5rem 1rem; /* Adjusted button padding */
+    font-size: 0.875rem; /* Adjusted button font size */
+  }
+}
