@@ -16,7 +16,7 @@ const navItems = [
   { name: "Skills", href: "#skills", icon: Code2 },
   { name: "Projects", href: "#projects", icon: FolderKanban },
   { name: "Contact", href: "#contact", icon: Phone },
-  { name: "Tools", href: "/public/tools/tools.html", icon: null }, // Updated Tools button to point to a placeholder section
+  { name: "Tools", href: "/tools/tools.html", icon: null }, // Updated Tools button to point to a placeholder section
 ];
 
 export const Navbar = () => {
