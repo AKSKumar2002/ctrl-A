@@ -16,7 +16,7 @@ const navItems = [
   { name: "Skills", href: "#skills", icon: Code2 },
   { name: "Projects", href: "#projects", icon: FolderKanban },
   { name: "Contact", href: "#contact", icon: Phone },
-  { name: "Tools", href: "https://ctrlalabs.vercel.app/tools", icon: null }, // Updated Tools button path
+  { name: "Tools", href: "#tools", icon: null }, // Updated Tools button to point to a placeholder section
 ];
 
 export const Navbar = () => {
