@@ -16,6 +16,7 @@ const navItems = [
   { name: "Skills", href: "#skills", icon: Code2 },
   { name: "Projects", href: "#projects", icon: FolderKanban },
   { name: "Contact", href: "#contact", icon: Phone },
+  { name: "Tools", href: "/src/tools/tools.html", icon: null }, // Fixed Tools button path
 ];
 
 export const Navbar = () => {
@@ -116,7 +117,7 @@ export const Navbar = () => {
                 className="text-xs font-semibold text-white/80 hover:text-white underline-hover transform transition duration-300 hover:scale-110 hover:-translate-y-1 hover:drop-shadow-lg flex items-center gap-2" // Reduced font size
                 style={{ perspective: "500px" }}
               >
-                <Icon className="w-4 h-4" />
+                {Icon && <Icon className="w-4 h-4" />} {/* Render icon only if it exists */}
                 {name}
               </a>
             ))}
@@ -156,7 +157,7 @@ export const Navbar = () => {
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center gap-2 text-sm font-medium hover:text-gray-300 transition-all" // Reduced font size
                 >
-                  <Icon className="w-4 h-4" />
+                  {Icon && <Icon className="w-4 h-4" />} {/* Render icon only if it exists */}
                   {name}
                 </a>
               ))}

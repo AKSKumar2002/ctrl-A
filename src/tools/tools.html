@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background: black;
+            color: white;
+            overflow: hidden;
+        }
+        header, footer {
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            position: relative; /* Ensure proper positioning */
+            z-index: 10;
+        }
+        .container {
+            width: 80%;
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin: 20px auto; /* Add spacing between header/footer and container */
+            animation: float 6s ease-in-out infinite;
+            z-index: 10;
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        .tool-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .tool-buttons a {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+        .tool-buttons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
+        }
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2>Explore Our Free Tools</h2>
+    </header>
+    <div class="container">
+        <h1>Welcome to My Tools</h1>
+        <p>Select a tool below to get started:</p>
+        <div class="tool-buttons">
+            <a href="qr/index.html">QR Generator</a>
+            <a href="m player/index.html">Music Player</a>
+            <a href="Calculator/index.html">Calculator</a>
+            <!-- Add up to 20 buttons here -->
+            <a href="notes/index.html">Notes</a>
+            <a href="tool5.html">Tool 5</a>
+            <a href="tool6.html">Tool 6</a>
+            <a href="tool7.html">Tool 7</a>
+            <a href="tool8.html">Tool 8</a>
+            <a href="tool9.html">Tool 9</a>
+            <a href="tool10.html">Tool 10</a>
+            <a href="tool11.html">Tool 11</a>
+            <a href="tool12.html">Tool 12</a>
+            <a href="tool13.html">Tool 13</a>
+            <a href="tool14.html">Tool 14</a>
+            <a href="tool15.html">Tool 15</a>
+            <a href="tool16.html">Tool 16</a>
+            <a href="tool17.html">Tool 17</a>
+            <a href="tool18.html">Tool 18</a>
+            <a href="tool19.html">Tool 19</a>
+            <a href="tool20.html">Tool 20</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 ctrlA.labs</p>
+    </footer>
+</body>
+</html>
