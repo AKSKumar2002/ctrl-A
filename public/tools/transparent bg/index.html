@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transparent Background Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div style="width: 100%; text-align: center;">
+            <h2>Make Image Background Transparent</h2>
+            <input type="file" id="imgInput" accept="image/*">
+            <div class="controls">
+                <label for="colorInput">Pick background color to remove:</label>
+                <input type="color" id="colorInput" value="#ffffff">
+                <button id="processBtn">Make Transparent</button>
+            </div>
+            <canvas id="canvas" width="400" height="400"></canvas>
+            <br>
+            <a id="downloadLink" style="display:none;" download="transparent.png">Download Result</a>
+        </div>
+    </div>
+    <script>
+        const imgInput = document.getElementById('imgInput');
+        const colorInput = document.getElementById('colorInput');
+        const processBtn = document.getElementById('processBtn');
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const downloadLink = document.getElementById('downloadLink');
+        let img = new Image();
+
+        imgInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(ev) {
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0);
+        };
+
+        processBtn.addEventListener('click', function() {
+            if (!img.src) return;
+            ctx.drawImage(img, 0, 0);
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+            // Get selected color
+            const hex = colorInput.value;
+            const r = parseInt(hex.substr(1,2),16);
+            const g = parseInt(hex.substr(3,2),16);
+            const b = parseInt(hex.substr(5,2),16);
+            // Tolerance for color match
+            const tolerance = 30;
+            for (let i = 0; i < data.length; i += 4) {
+                if (Math.abs(data[i] - r) < tolerance &&
+                    Math.abs(data[i+1] - g) < tolerance &&
+                    Math.abs(data[i+2] - b) < tolerance) {
+                    data[i+3] = 0; // Set alpha to 0 (transparent)
+                }
+            }
+            ctx.putImageData(imageData, 0, 0);
+            // Enable download
+            downloadLink.href = canvas.toDataURL('image/png');
+            downloadLink.style.display = 'inline-block';
+            downloadLink.textContent = 'Download Result';
+        });
+    </script>
+</body>
+</html>

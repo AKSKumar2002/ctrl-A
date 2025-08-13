@@ -73,7 +73,7 @@ const AboutUs = () => {
                   className="w-24 h-24 mx-auto rounded-full border-2 border-white/30 object-cover mb-4"
                 />
                 <h3 className="text-xl font-semibold">{member.name}</h3>
-                <p className="text-sm text-green-300">{member.role}</p>
+                <p className="text-sm text-purple-300">{member.role}</p>
                 <p className="text-white/80 mt-2 text-sm">{member.bio}</p>
               </motion.div>
             ))}

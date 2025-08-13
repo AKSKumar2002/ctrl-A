@@ -23,7 +23,7 @@ export const HeroSection = () => {
 
           <p className="text-base md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3"> {/* Reduced font size */}
           We create seamless and stunning web interfaces that blend design with functionality. 
-          At AKStack.dev, we specialize in modern front-end technologies to deliver immersive user experiences, backed by robust backend solutions that scale with your business.
+          At <strong>ctrlA</strong>, we specialize in modern end to end technologies to deliver immersive user experiences, backed by robust backend solutions that scale with your business.
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
