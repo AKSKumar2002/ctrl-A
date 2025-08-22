@@ -161,5 +161,5 @@ function formatDate(dateString) {
   });
 }
 
-searchInput.value = "";
+searchInput.value = "AKSKumar2002";
 searchUser();
